@@ -1,0 +1,18 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "pyrepl",
+  "compatibility_date": "2026-10-11",
+  "observability": {
+    "enabled": true,
+  },
+  "assets": {
+    "directory": "./build/",
+    "not_found_handling": "single-page-application",
+  },
+  "routes": [
+    {
+      "pattern": "step-out.teachstack.org",
+      "custom_domain": true,
+    },
+  ],
+}
