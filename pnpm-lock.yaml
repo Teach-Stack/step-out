@@ -181,12 +181,21 @@ importers:
       '@fontsource-variable/space-grotesk':
         specifier: ^5.3.0
         version: 5.3.0
+      '@signaldb/core':
+        specifier: ^1.8.1
+        version: 1.8.1
+      '@signaldb/indexeddb':
+        specifier: ^1.1.0
+        version: 1.1.0(@signaldb/core@1.8.1)
+      '@signaldb/svelte':
+        specifier: ^1.1.1
+        version: 1.1.1(@signaldb/core@1.8.1)(svelte@5.57.2)
       '@sveltejs/adapter-static':
         specifier: ^4.0.0
         version: 4.0.0(@sveltejs/kit@3.0.1(@sveltejs/vite-plugin-svelte@7.3.1(@voidzero-dev/vite-plus-core@1.1.0(esbuild@0.28.2)(typescript@6.0.3))(svelte@5.57.2))(@voidzero-dev/vite-plus-core@1.1.0(esbuild@0.28.2)(typescript@6.0.3))(svelte@5.57.2)(typescript@6.0.3))
       '@teach-stack/css':
-        specifier: ^0.1.4
-        version: 0.1.4(@fontsource-variable/space-grotesk@5.3.0)
+        specifier: ^0.1.5
+        version: 0.1.5(@fontsource-variable/space-grotesk@5.3.0)
     devDependencies:
       '@sveltejs/adapter-auto':
         specifier: ^8.0.0
@@ -923,6 +932,20 @@ packages:
   '@rolldown/pluginutils@1.0.1':
     resolution: {integrity: sha512-2j9bGt5Jh8hj+vPtgzPtl72j0yRxHAyumoo6TNfAjsLB04UtpSvPbPcDcBMxz7n+9CYB0c1GxQFxYRg2jimqGw==}
 
+  '@signaldb/core@1.8.1':
+    resolution: {integrity: sha512-85+ehSokMaKrPue42wPLmF+tU2jfky99kC2UlamfYS64I1YMMCWDeOdx17PNMpTxLdGFlCgnDEpTZB5XO3HFyQ==}
+
+  '@signaldb/indexeddb@1.1.0':
+    resolution: {integrity: sha512-TZIyLG7X11pwdGgQ9uD9k4OvxVwBmGjE7AQ4ZkSLEAvI7O822lwz+fTdJL2d/6sTQ5hGvoXkoqwcZCyb7e8g+w==}
+    peerDependencies:
+      '@signaldb/core': 1.x
+
+  '@signaldb/svelte@1.1.1':
+    resolution: {integrity: sha512-U4B2g6VPXrhCKjEYXMr9oMh6Vtrv4a2wdAZuek0HNdBrAgoxJM2TUlvY+bK1ePE6L/gadkvpndRuHXH4p4VFiQ==}
+    peerDependencies:
+      '@signaldb/core': 1.x
+      svelte: ^5.7.0
+
   '@sindresorhus/is@7.2.0':
     resolution: {integrity: sha512-P1Cz1dWaFfR4IR+U13mqqiGsLFf1KbayybWwdd2vfctdV6hDpUkgCY0nKOLLTMSoRd/jJNjtbqzf13K8DCCXQw==}
     engines: {node: '>=18'}
@@ -975,8 +998,8 @@ packages:
       svelte: ^5.46.4
       vite: ^8.0.0-beta.7 || ^8.0.0
 
-  '@teach-stack/css@0.1.4':
-    resolution: {integrity: sha512-RY9D/PHJtxVZg8xb0DO1weSDM6ZHC9TyER9rLXDKZInIzAF+Ta/ntAc1+fSJVz1EBAvH1xbkKYBnFQN54qQ1PA==}
+  '@teach-stack/css@0.1.5':
+    resolution: {integrity: sha512-QaI/E5H7f+vlWFDJ6cPHxZ1c+8ocqobM9Tu26bA8ERcpk7aNjyR2XNnrfRrU06zIbXJHVxaHGg+Rd4rKvXp7Uw==}
     peerDependencies:
       '@fontsource-variable/space-grotesk': ^5.2.10
 
@@ -1421,6 +1444,9 @@ packages:
     resolution: {integrity: sha512-KfYbmpRm0VbLjEvVa9yGwCi9GI34xvi7A/HXYWQO65CSD2u3MczUJSuwXKFIxlGsgBQizV9q5J9NHj4VG0n+pA==}
     engines: {node: '>=12.0.0'}
 
+  fast-sort@3.4.1:
+    resolution: {integrity: sha512-76uvGPsF6So53sZAqenP9UVT3p5l7cyTHkLWVCMinh41Y8NDrK1IYXJgaBMfc1gk7nJiSRZp676kddFG2Aa5+A==}
+
   fdir@6.5.0:
     resolution: {integrity: sha512-tIbYtZbucOs0BRGqPJkshJUYdL+SDH7dVM8gjy+ERp3WAUjLEFJE+02kanyHtwjWOnwrKYBiwAmM0p4kLJAnXg==}
     engines: {node: '>=12.0.0'}
@@ -1537,6 +1563,9 @@ packages:
 
   magic-string@1.4.3:
     resolution: {integrity: sha512-z12OxmaPGE0F4xlpGdjuAUckipLpQlTAuAmyGhNoD7ODpYUzvDfvtxUbjM/jwznyP178oju/KDdyi220wNJ0RQ==}
+
+  mingo@7.2.4:
+    resolution: {integrity: sha512-KrxHKzMMguL+G1lBC6YbU5UTXdw2viwVHNTPzNYVfEQfSAoetC3M1a7rlveOksn/96oNy+QwBlIXvx/q6rWyxQ==}
 
   miniflare@5.20261006.1-alpha:
     resolution: {integrity: sha512-6ylv8tamkrspDI2R/cAYfv+YWmfGNdXe76Pi9TauEUWsFVXn3LNF9Yk8oduzf1a+TYsSRYTqlOE7+nGGRsMHdw==}
@@ -2242,6 +2271,20 @@ snapshots:
 
   '@rolldown/pluginutils@1.0.1': {}
 
+  '@signaldb/core@1.8.1':
+    dependencies:
+      fast-sort: 3.4.1
+      mingo: 7.2.4
+
+  '@signaldb/indexeddb@1.1.0(@signaldb/core@1.8.1)':
+    dependencies:
+      '@signaldb/core': 1.8.1
+
+  '@signaldb/svelte@1.1.1(@signaldb/core@1.8.1)(svelte@5.57.2)':
+    dependencies:
+      '@signaldb/core': 1.8.1
+      svelte: 5.57.2
+
   '@sindresorhus/is@7.2.0': {}
 
   '@speed-highlight/core@1.2.24': {}
@@ -2287,7 +2330,7 @@ snapshots:
       vite: '@voidzero-dev/vite-plus-core@1.1.0(esbuild@0.28.2)(typescript@6.0.3)'
       vitefu: 1.1.3(@voidzero-dev/vite-plus-core@1.1.0(esbuild@0.28.2)(typescript@6.0.3))
 
-  '@teach-stack/css@0.1.4(@fontsource-variable/space-grotesk@5.3.0)':
+  '@teach-stack/css@0.1.5(@fontsource-variable/space-grotesk@5.3.0)':
     dependencies:
       '@fontsource-variable/space-grotesk': 5.3.0
 
@@ -2591,6 +2634,8 @@ snapshots:
 
   expect-type@1.4.0: {}
 
+  fast-sort@3.4.1: {}
+
   fdir@6.5.0(picomatch@4.0.7):
     optionalDependencies:
       picomatch: 4.0.7
@@ -2670,6 +2715,8 @@ snapshots:
   magic-string@1.4.3:
     dependencies:
       '@jridgewell/sourcemap-codec': 1.6.0
+
+  mingo@7.2.4: {}
 
   miniflare@5.20261006.1-alpha:
     dependencies:
