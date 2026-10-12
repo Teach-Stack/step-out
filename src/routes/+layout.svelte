@@ -5,3 +5,9 @@
 </script>
 
 {@render children()}
+
+<style>
+  :global(body) {
+    background-color: var(--slate-1);
+  }
+</style>

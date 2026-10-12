@@ -1,5 +1,6 @@
 import adapter from '@sveltejs/adapter-static'
 import { sveltekit } from '@sveltejs/kit/vite'
+
 import { defineConfig, lazyPlugins } from 'vite-plus'
 
 export default defineConfig({
@@ -22,6 +23,11 @@ export default defineConfig({
       adapter: adapter({
         fallback: 'index.html',
       }),
+      compilerOptions: {
+        experimental: {
+          async: true,
+        },
+      },
     }),
   ]),
 })

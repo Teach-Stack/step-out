@@ -24,7 +24,11 @@ type AvailableSettings = SettingCollection['availableSettings'][number]
 type SettingKey = AvailableSettings['id']
 type SettingValue<K extends SettingKey> = Extract<AvailableSettings, { id: K }>['options'][number]
 
+export type PinTypeOptions = SettingValue<'pinType'>
+
 class SettingCollection extends Collection<SettingType> {
+  private ready = false
+
   readonly availableSettings = [
     defineSetting({
       id: 'pinType',
@@ -47,6 +51,7 @@ class SettingCollection extends Collection<SettingType> {
     this.isReady()
       .then(() => {
         this.populateSettings()
+        this.ready = true
       })
       .catch((e) => console.error('db failed to initialize', e))
   }
@@ -69,7 +74,8 @@ class SettingCollection extends Collection<SettingType> {
     super.insert(setting)
   }
 
-  getSetting<K extends SettingKey>(key: K) {
+  async getSetting<K extends SettingKey>(key: K) {
+    await this.isReady()
     const found = super.findOne({ id: key })
 
     if (!found) throw new Error('setting not found')

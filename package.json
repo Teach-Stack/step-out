@@ -21,7 +21,8 @@
     "@signaldb/indexeddb": "^1.1.0",
     "@signaldb/svelte": "^1.1.1",
     "@sveltejs/adapter-static": "^4.0.0",
-    "@teach-stack/css": "^0.1.5"
+    "@teach-stack/css": "^0.1.6",
+    "arktype": "^2.2.8"
   },
   "devDependencies": {
     "@sveltejs/adapter-auto": "^8.0.0",
